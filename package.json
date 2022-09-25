@@ -1,0 +1,17 @@
+{
+  "name": "project_trello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "npx parcel",
+    "build": "npx parcel build --public-url 'test/'"
+  },
+  "author": "Dima",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}

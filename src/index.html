@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello clone</title>
+
+    <link rel="stylesheet" href="./scss/style.scss">
+    <script src="./js/script.js" type="module"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__title">
+                <h1>Trello<span>by TeachMeSkills</span></h1>
+            </div>
+            <div class="header__watch">
+
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__container">
+            <div class="main__todo">
+                <div class="todo-title">
+                    <p>Todo:</p>
+                    <p class="todo-counter">0</p>
+                </div>
+                <div class="todo-content">
+
+                </div>
+                <button class="todo-button">Add todo</button>
+            </div>
+            <div class="main__progress">
+                <div class="progress-title">
+                    <p>In progress:</p>
+                    <p class="progress-counter">0</p>
+                </div>
+                <div class="progress-content">
+
+                </div>
+            </div>
+            <div class="main__done">
+                <div class="done-title">
+                    <p>Done:</p>
+                    <p class="done-counter">0</p>
+                </div>
+                <div class="done-content">
+
+                </div>
+                <button class="done-button">Delete all</button>
+            </div>
+        </div>
+    </main>
+
+    <template id="template__card">
+        <div class="card {{color}}" id="{{id}}" draggable="true">
+            <div class="card__header">
+                <h3>{{cardTitle}}</h3>
+                <p>{{date}}</p>
+            </div>
+            <div class="card__main">
+                <p>{{cardDescription}}</p>
+                <select name="#" class="card-select">
+                    <option value="1" {{one}} class="one">Todo</option>
+                    <option value="2" {{two}} class="two">In progress</option>
+                    <option value="3" {{three}} class="three">Done</option>
+                </select>
+            </div>
+            <div class="card__footer">
+                <p>{{userName}}</p>
+                <div class="footer-button">
+                    <button type="button" class="card-edit"></button>
+                    <button type="button" class="card-delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <div id="1" class="popup">
+        <div class="popup__body">
+            <form class="popup__content">
+                <div class="popup__title">
+                    <input type="text" class="title-input">
+                    <select name="#" class="title-select">
+                        <option value="1" class="one">Todo</option>
+                        <option value="2" class="two">In progress</option>
+                        <option value="3" class="three">Done</option>
+                    </select>
+                </div>
+                <div class="popup__text">
+                    <textarea cols="30" rows="10" class="text-textarea"></textarea>
+                </div>
+                <div class="popup__buttons">
+                    <select name="#" class="popup__select"></select>
+                    <button type="button" class="popup__close">Cancel</button>
+                    <button type="submit" class="popup__confirm">Confirm</button>
+                </div>
+            </form>
+        </div>      
+    </div>
+
+    <div id="2" class="popup__edit">
+        <div class="edit__body">
+            <form class="edit__content">
+                <div class="edit__title">
+                    <input type="text" class="title-input edit">
+                    <input type="hidden" class="title-hidden">
+                </div>
+                <div class="edit__text">
+                    <textarea cols="30" rows="10" class="text-textarea edit"></textarea>
+                </div>
+                <div class="edit__buttons">
+                    <select name="#" class="edit__select"></select>
+                    <button type="button" class="edit__close">Cancel</button>
+                    <button type="submit" class="edit__confirm">Confirm</button>
+                </div>
+            </form>
+        </div>      
+    </div>
+
+    <div class="popup__delete">
+        <div class="delete-body">
+            <div class="delete-content">
+                <p>Are you sure you want to delete all cards?</p>
+                <div class="delete-buttons">
+                    <button type="button" class="delete-close">Cancel</button>
+                    <button type="button" class="delete-confirm">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup__moving">
+        <div class="moving-body">
+            <div class="moving-content">
+                <p>We recommend that you finish the old tasks before taking on new ones!</p>
+                <button type="button" class="moving-close">Ok</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
